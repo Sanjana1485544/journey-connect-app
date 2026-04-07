@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Journey Connect",
+    "slug": "journey-connect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.journeyconnect.app",
+      "config": {
+        "googleMapsApiKey": "${process.env.GOOGLE_MAPS_API_KEY}"
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to show nearby rides and set pickup/dropoff points.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to your location to show nearby rides and set pickup/dropoff points."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.journeyconnect.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "${process.env.GOOGLE_MAPS_API_KEY}"
+        }
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    },
+    "scheme": "journeyconnect",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Journey Connect to use your location."
+        }
+      ]
+    ]
+  }
+}
